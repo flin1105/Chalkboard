@@ -1,21 +1,23 @@
 import Note from "./Note";
 import NoteForm from "./NoteForm";
-import NoteButton from "./FalseButton";
+import NoteButton from "./NoteButton";
 import TrueButton from "./TrueButton";
 import { useState } from "react";
 
 const Column = ({ title, tasks }) => {
-	const [addNote, setAddNote] = useState(false);
+	const [addNote, setAddNote] = useState(true);
+	const [columnTasks, addColumnTasks] = useState(tasks);
 
 	const handleNoteButton = (e) => {
 		e.preventDefault();
 		setAddNote(!addNote);
+		console.log("Current button", addNote);
 	};
 
 	return (
 		<div className="column-container">
 			<h2>{title}</h2>
-			{tasks.map((task, index) => {
+			{columnTasks.map((task, index) => {
 				return (
 					<Note
 						key={index}
@@ -24,11 +26,16 @@ const Column = ({ title, tasks }) => {
 				);
 			})}
 			{addNote ? (
-				<NoteButton onNoteClick={handleNoteButton} />
+				<NoteButton
+					addNote={addNote}
+					onAddNoteClick={setAddNote}
+				/>
 			) : (
 				<TrueButton
-					onNoteClick={handleNoteButton}
-					tasks={tasks}
+					addNote={addNote}
+					onAddNoteClick={setAddNote}
+					columnTasks={columnTasks}
+					addColumnTasks={addColumnTasks}
 				/>
 			)}
 		</div>

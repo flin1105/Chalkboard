@@ -1,19 +1,23 @@
 import { useState } from "react";
 
-const TrueButton = ({ onNoteClick, tasks }) => {
+const TrueButton = ({
+	addNote,
+	onAddNoteClick,
+	columnTasks,
+	addColumnTasks,
+}) => {
 	const [noteText, setNoteText] = useState("");
+
 	const handleTextChange = (e) => {
 		setNoteText(e.target.value);
 	};
 
 	const handleAddNote = (e) => {
-		console.log(e);
 		e.preventDefault();
 		const newNote = { description: noteText, urgency: 0 };
-		console.log(newNote);
-		tasks.concat(newNote);
-		console.log(tasks);
-		// onNoteClick();
+		addColumnTasks(columnTasks.concat(newNote));
+		setNoteText("");
+		onAddNoteClick(!addNote);
 	};
 
 	return (

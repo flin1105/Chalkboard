@@ -5,7 +5,7 @@ import "./Chalkboard.css";
 const Chalkboard = () => {
 	const [addTask, setAddTask] = useState(false);
 
-	const columns = [
+	const [columns, addColumns] = useState([
 		{
 			id: 1,
 			name: "Backlog",
@@ -47,7 +47,7 @@ const Chalkboard = () => {
 				{ description: "Test item", urgency: 0 },
 			],
 		},
-	];
+	]);
 
 	return (
 		<>
