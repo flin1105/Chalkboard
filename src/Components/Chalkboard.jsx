@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Column from "./Column";
+import AddColumnButton from "./AddColumnButton";
 import "./Chalkboard.css";
 
 const Chalkboard = () => {
@@ -62,6 +63,10 @@ const Chalkboard = () => {
 						/>
 					);
 				})}
+				<AddColumnButton
+					columns={columns}
+					addColumns={addColumns}
+				/>
 			</div>
 		</>
 	);
