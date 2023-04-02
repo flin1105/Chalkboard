@@ -4,12 +4,10 @@ const AddColumnButton = ({ columns, addColumns }) => {
 	const [newColumnTitle, setNewColumnTitle] = useState("");
 	const handleInputChange = (e) => {
 		setNewColumnTitle(e.target.value);
-		console.log(newColumnTitle);
 	};
 
 	const handleOnSubmit = (e) => {
 		e.preventDefault();
-		console.log("Adding Column");
 		const newColumn = {
 			id: columns.length + 1,
 			name: newColumnTitle,
