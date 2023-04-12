@@ -50,6 +50,8 @@ const Chalkboard = () => {
 		},
 	]);
 
+	console.log("columns from Chalkboard component,", columns);
+
 	return (
 		<>
 			<div>This is my Chalkboard</div>

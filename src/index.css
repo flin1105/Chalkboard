@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Open+Sans&display=swap");
 
 :root {
-	font-family: "Delicious Handrawn", cursive, Inter, system-ui, Avenir,
-		Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 	font-size: 24px;

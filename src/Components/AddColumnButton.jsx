@@ -1,4 +1,5 @@
 import { useState } from "react";
+import uniqid from "uniqid";
 
 const AddColumnButton = ({ columns, addColumns }) => {
 	const [newColumnTitle, setNewColumnTitle] = useState("");
@@ -9,20 +10,20 @@ const AddColumnButton = ({ columns, addColumns }) => {
 	const handleOnSubmit = (e) => {
 		e.preventDefault();
 		const newColumn = {
-			id: columns.length + 1,
+			id: uniqid(),
 			name: newColumnTitle,
 			tasks: [{ description: "Test item", urgency: 0 }],
 		};
 		addColumns(columns.concat(newColumn));
+		setNewColumnTitle(null);
 	};
 
 	return (
 		<form onSubmit={handleOnSubmit}>
-			<span>Add another column</span>
 			<input
 				type="text"
 				id="newColumn"
-				defaultValue={newColumnTitle}
+				placeholder="Add another column"
 				onChange={handleInputChange}
 			/>
 			<input
