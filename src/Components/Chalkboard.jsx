@@ -6,13 +6,17 @@ import "./Chalkboard.css";
 const Chalkboard = () => {
 	const [addTask, setAddTask] = useState(false);
 
-	const [columns, addColumns] = useState([
+	const [columns, setColumns] = useState([
 		{
 			id: 1,
 			name: "Backlog",
 			tasks: [
-				{ description: "Here are items that are backlogged", urgency: 0 },
-				{ description: "Test item", urgency: 0 },
+				{
+					taskId: 0,
+					description: "Here are items that are backlogged",
+					urgency: 0,
+				},
+				{ taskId: 1, description: "Test item", urgency: 0 },
 				,
 			],
 		},
@@ -20,32 +24,36 @@ const Chalkboard = () => {
 			id: 2,
 			name: "To Do List",
 			tasks: [
-				{ description: "You can add items to your to do list", urgency: 0 },
-				{ description: "Test item", urgency: 0 },
+				{
+					taskId: 0,
+					description: "You can add items to your to do list",
+					urgency: 0,
+				},
+				{ taskId: 1, description: "Test item", urgency: 0 },
 			],
 		},
 		{
 			id: 3,
 			name: "In Progress",
 			tasks: [
-				{ description: "Current tasks", urgency: 0 },
-				{ description: "Test item", urgency: 0 },
+				{ taskId: 0, description: "Current tasks", urgency: 0 },
+				{ taskId: 1, description: "Test item", urgency: 0 },
 			],
 		},
 		{
 			id: 4,
 			name: "Review/Testing",
 			tasks: [
-				{ description: "Tasks in review", urgency: 0 },
-				{ description: "Test item", urgency: 0 },
+				{ taskId: 0, description: "Tasks in review", urgency: 0 },
+				{ taskId: 1, description: "Test item", urgency: 0 },
 			],
 		},
 		{
 			id: 5,
 			name: "Complete",
 			tasks: [
-				{ description: "Finished Tasks", urgency: 0 },
-				{ description: "Test item", urgency: 0 },
+				{ taskId: 0, description: "Finished Tasks", urgency: 0 },
+				{ taskId: 1, description: "Test item", urgency: 0 },
 			],
 		},
 	]);
@@ -54,20 +62,23 @@ const Chalkboard = () => {
 
 	return (
 		<>
-			<div>This is my Chalkboard</div>
+			<h2>This is my Chalkboard</h2>
 			<div className="main-board">
 				{columns.map((column) => {
 					return (
 						<Column
 							key={column.id}
+							id={column.id}
 							title={column.name}
 							tasks={column.tasks}
+							columns={columns}
+							setColumns={setColumns}
 						/>
 					);
 				})}
 				<AddColumnButton
 					columns={columns}
-					addColumns={addColumns}
+					setColumns={setColumns}
 				/>
 			</div>
 		</>

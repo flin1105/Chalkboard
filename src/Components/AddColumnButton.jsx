@@ -1,7 +1,7 @@
 import { useState } from "react";
 import uniqid from "uniqid";
 
-const AddColumnButton = ({ columns, addColumns }) => {
+const AddColumnButton = ({ columns, setColumns }) => {
 	const [newColumnTitle, setNewColumnTitle] = useState("");
 	const handleInputChange = (e) => {
 		setNewColumnTitle(e.target.value);
@@ -14,7 +14,7 @@ const AddColumnButton = ({ columns, addColumns }) => {
 			name: newColumnTitle,
 			tasks: [{ description: "Test item", urgency: 0 }],
 		};
-		addColumns(columns.concat(newColumn));
+		setColumns(columns.concat(newColumn));
 		setNewColumnTitle(null);
 	};
 

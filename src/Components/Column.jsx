@@ -1,27 +1,31 @@
 import Note from "./Note";
-import NoteForm from "./NoteForm";
 import NoteButton from "./NoteButton";
 import TrueButton from "./TrueButton";
 import { useState } from "react";
+import "./Column.css";
 
-const Column = ({ title, tasks }) => {
+const Column = ({ id, title, tasks, columns, setColumns }) => {
 	const [addNote, setAddNote] = useState(true);
-	const [columnTasks, addColumnTasks] = useState(tasks);
+	const [columnTasks, setColumnTasks] = useState(tasks);
 
-	const handleNoteButton = (e) => {
+	const handleDeleteClick = (e) => {
 		e.preventDefault();
-		setAddNote(!addNote);
-		console.log("Current button", addNote);
+		const filteredColumn = columns.filter((column) => column.id !== id);
+		setColumns(filteredColumn);
 	};
 
 	return (
 		<div className="column-container">
 			<h2>{title}</h2>
+			<button onClick={handleDeleteClick}>Delete Column</button>
 			{columnTasks.map((task, index) => {
 				return (
 					<Note
 						key={index}
+						id={task.taskId}
 						description={task.description}
+						columnTasks={columnTasks}
+						deleteNote={setColumnTasks}
 					/>
 				);
 			})}
@@ -35,7 +39,7 @@ const Column = ({ title, tasks }) => {
 					addNote={addNote}
 					onAddNoteClick={setAddNote}
 					columnTasks={columnTasks}
-					addColumnTasks={addColumnTasks}
+					addColumnTasks={setColumnTasks}
 				/>
 			)}
 		</div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import uniqid from "uniqid";
 
 const TrueButton = ({
 	addNote,
@@ -14,7 +15,8 @@ const TrueButton = ({
 
 	const handleAddNote = (e) => {
 		e.preventDefault();
-		const newNote = { description: noteText, urgency: 0 };
+		const newId = uniqid();
+		const newNote = { taskId: newId, description: noteText, urgency: 0 };
 		addColumnTasks(columnTasks.concat(newNote));
 		setNoteText("");
 		onAddNoteClick(!addNote);
