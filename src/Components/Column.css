@@ -1,4 +1,17 @@
 .column-container {
-	border: thick double #32a1ce;
+	min-width: 200px;
+	border: thick solid rgba(92, 96, 99, 255);
+	border-radius: 10px;
 	flex: 1 1 0px;
+}
+
+.column-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.column-delete-button {
+	min-width: 40px;
+	height: 40px;
 }

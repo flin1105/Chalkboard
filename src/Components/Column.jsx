@@ -16,8 +16,15 @@ const Column = ({ id, title, tasks, columns, setColumns }) => {
 
 	return (
 		<div className="column-container">
-			<h2>{title}</h2>
-			<button onClick={handleDeleteClick}>Delete Column</button>
+			<div className="column-header">
+				<h2>{title}</h2>
+				<button
+					className="column-delete-button"
+					onClick={handleDeleteClick}
+				>
+					X
+				</button>
+			</div>
 			{columnTasks.map((task, index) => {
 				return (
 					<Note

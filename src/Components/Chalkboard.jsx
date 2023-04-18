@@ -62,7 +62,9 @@ const Chalkboard = () => {
 
 	return (
 		<>
-			<h2>This is my Chalkboard</h2>
+			<h2>
+				<strong>THIS IS MY CHALKBOARD</strong>
+			</h2>
 			<div className="main-board">
 				{columns.map((column) => {
 					return (
