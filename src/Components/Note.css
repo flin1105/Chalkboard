@@ -1,0 +1,10 @@
+.note-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.note-delete-button {
+	min-width: 30px;
+	height: 30px;
+}

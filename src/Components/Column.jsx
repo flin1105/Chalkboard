@@ -33,6 +33,7 @@ const Column = ({ id, title, tasks, columns, setColumns }) => {
 						description={task.description}
 						columnTasks={columnTasks}
 						deleteNote={setColumnTasks}
+						priority={task.priority}
 					/>
 				);
 			})}

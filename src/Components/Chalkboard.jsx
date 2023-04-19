@@ -14,9 +14,9 @@ const Chalkboard = () => {
 				{
 					taskId: 0,
 					description: "Here are items that are backlogged",
-					urgency: 0,
+					priority: "normal",
 				},
-				{ taskId: 1, description: "Test item", urgency: 0 },
+				{ taskId: 1, description: "Test item", priority: "normal" },
 				,
 			],
 		},
@@ -27,33 +27,33 @@ const Chalkboard = () => {
 				{
 					taskId: 0,
 					description: "You can add items to your to do list",
-					urgency: 0,
+					priority: "normal",
 				},
-				{ taskId: 1, description: "Test item", urgency: 0 },
+				{ taskId: 1, description: "Test item", priority: "normal" },
 			],
 		},
 		{
 			id: 3,
 			name: "In Progress",
 			tasks: [
-				{ taskId: 0, description: "Current tasks", urgency: 0 },
-				{ taskId: 1, description: "Test item", urgency: 0 },
+				{ taskId: 0, description: "Current tasks", priority: "normal" },
+				{ taskId: 1, description: "Test item", priority: "normal" },
 			],
 		},
 		{
 			id: 4,
 			name: "Review/Testing",
 			tasks: [
-				{ taskId: 0, description: "Tasks in review", urgency: 0 },
-				{ taskId: 1, description: "Test item", urgency: 0 },
+				{ taskId: 0, description: "Tasks in review", priority: "normal" },
+				{ taskId: 1, description: "Test item", priority: "normal" },
 			],
 		},
 		{
 			id: 5,
 			name: "Complete",
 			tasks: [
-				{ taskId: 0, description: "Finished Tasks", urgency: 0 },
-				{ taskId: 1, description: "Test item", urgency: 0 },
+				{ taskId: 0, description: "Finished Tasks", priority: "normal" },
+				{ taskId: 1, description: "Test item", priority: "normal" },
 			],
 		},
 	]);
