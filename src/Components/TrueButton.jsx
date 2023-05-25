@@ -16,7 +16,12 @@ const TrueButton = ({
 	const handleAddNote = (e) => {
 		e.preventDefault();
 		const newId = uniqid();
-		const newNote = { taskId: newId, description: noteText, urgency: 0 };
+		const newNote = {
+			taskId: newId,
+			description: noteText,
+			priority: "normal",
+			tags: [],
+		};
 		addColumnTasks(columnTasks.concat(newNote));
 		setNoteText("");
 		onAddNoteClick(!addNote);

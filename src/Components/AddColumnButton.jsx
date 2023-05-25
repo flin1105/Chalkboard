@@ -12,7 +12,7 @@ const AddColumnButton = ({ columns, setColumns }) => {
 		const newColumn = {
 			id: uniqid(),
 			name: newColumnTitle,
-			tasks: [{ description: "Test item", urgency: 0 }],
+			tasks: [{ description: "Test item", priority: "normal", tags: [] }],
 		};
 		setColumns(columns.concat(newColumn));
 		setNewColumnTitle(null);

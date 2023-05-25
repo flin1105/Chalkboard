@@ -15,8 +15,8 @@ const Column = ({ id, title, tasks, columns, setColumns }) => {
 	};
 
 	return (
-		<div className="column-container">
-			<div className="column-header">
+		<div className="column-container flex-1 border-4 rounded-lg border-teal-600">
+			<div className="column-header flex justify-between">
 				<h2>{title}</h2>
 				<button
 					className="column-delete-button"
@@ -34,6 +34,7 @@ const Column = ({ id, title, tasks, columns, setColumns }) => {
 						columnTasks={columnTasks}
 						deleteNote={setColumnTasks}
 						priority={task.priority}
+						tags={task.tags}
 					/>
 				);
 			})}

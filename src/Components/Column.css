@@ -1,15 +1,15 @@
 .column-container {
 	min-width: 200px;
-	border: thick solid rgba(92, 96, 99, 255);
-	border-radius: 10px;
-	flex: 1 1 0px;
+	/* border: thick solid rgba(92, 96, 99, 255);
+	border-radius: 10px; */
+	/* flex: 1 1 0px; */
 }
 
-.column-header {
+/* .column-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
+} */
 
 .column-delete-button {
 	min-width: 40px;

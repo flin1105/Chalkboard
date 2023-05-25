@@ -1,7 +1,5 @@
 .note-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	border: dashed red;
 }
 
 .note-delete-button {
