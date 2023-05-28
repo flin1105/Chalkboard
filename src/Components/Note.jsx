@@ -24,8 +24,11 @@ const Note = ({ id, description, priority, columnTasks, tags, deleteNote }) => {
 			<PriorityDropdown taskPriority={priority} />
 			<div className="flex">
 				<div>
-					{tags.map((tag) => (
-						<span className="inline-block rounded-lg bg-green-400 text-gray-200 m-1">
+					{tags.map((tag, index) => (
+						<span
+							className="inline-block rounded-lg bg-green-400 text-gray-200 m-1"
+							key={index}
+						>
 							#{tag}
 						</span>
 					))}

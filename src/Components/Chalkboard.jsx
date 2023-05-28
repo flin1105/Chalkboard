@@ -2,6 +2,7 @@ import { useState } from "react";
 import Column from "./Column";
 import AddColumnButton from "./AddColumnButton";
 import FilteredButton from "./FilterButton";
+import AddTagsForm from "./AddTagsForm";
 
 const Chalkboard = () => {
 	const [addTask, setAddTask] = useState(false);
@@ -139,6 +140,7 @@ const Chalkboard = () => {
 					setColumns={setColumns}
 				/>
 			</div>
+			<AddTagsForm />
 		</>
 	);
 };
