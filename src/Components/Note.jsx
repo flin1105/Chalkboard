@@ -1,4 +1,5 @@
 import PriorityDropdown from "./PriorityDropdown";
+import ToggleTagFormButton from "./ToggleTagFormButton";
 import "./Note.css";
 
 const Note = ({ id, description, priority, columnTasks, tags, deleteNote }) => {
@@ -7,8 +8,6 @@ const Note = ({ id, description, priority, columnTasks, tags, deleteNote }) => {
 		const newTaskList = columnTasks.filter((task) => task.taskId !== id);
 		deleteNote(newTaskList);
 	};
-
-	console.log("tags", tags);
 
 	return (
 		<div className="note-container">
@@ -21,6 +20,7 @@ const Note = ({ id, description, priority, columnTasks, tags, deleteNote }) => {
 					X
 				</button>
 			</div>
+			<ToggleTagFormButton />
 			<PriorityDropdown taskPriority={priority} />
 			<div className="flex">
 				<div>

@@ -9,7 +9,7 @@ const PriorityDropdown = ({ taskPriority }) => {
 	};
 
 	return (
-		<div className="text-right">
+		<span className="text-right">
 			<label>Task Priority:</label>
 			<select
 				value={priority}
@@ -26,7 +26,7 @@ const PriorityDropdown = ({ taskPriority }) => {
 					);
 				})}
 			</select>
-		</div>
+		</span>
 	);
 };
 

@@ -1,16 +1,4 @@
-const Checkbox = ({ name, checked, allTags, setAllTags }) => {
-	const handleCheckBoxChange = (e) => {
-		const newTags = allTags.map((tag) => {
-			if (tag.tagName === name) {
-				return { ...tag, checked: !checked };
-			} else {
-				return { ...tag };
-			}
-		});
-
-		setAllTags(newTags);
-	};
-
+const Checkbox = ({ name, checked, change }) => {
 	return (
 		<li>
 			<input
@@ -18,7 +6,7 @@ const Checkbox = ({ name, checked, allTags, setAllTags }) => {
 				id={name}
 				name={name}
 				checked={checked}
-				onChange={handleCheckBoxChange}
+				onChange={change}
 			/>
 			<label htmlFor={name}>{name}</label>
 		</li>

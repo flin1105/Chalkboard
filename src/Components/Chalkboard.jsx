@@ -16,13 +16,13 @@ const Chalkboard = () => {
 					taskId: 0,
 					description: "Here are items that are backlogged",
 					priority: "normal",
-					tags: ["Test"],
+					tags: ["Bug"],
 				},
 				{
 					taskId: 1,
 					description: "Test item",
 					priority: "normal",
-					tags: ["normal stuff"],
+					tags: ["Other"],
 				},
 				,
 			],
@@ -35,13 +35,13 @@ const Chalkboard = () => {
 					taskId: 0,
 					description: "You can add items to your to do list",
 					priority: "normal",
-					tags: ["work related"],
+					tags: ["Other"],
 				},
 				{
 					taskId: 1,
 					description: "Test item",
 					priority: "normal",
-					tags: ["personal", "tax"],
+					tags: ["Other", "Bug"],
 				},
 			],
 		},
@@ -53,13 +53,13 @@ const Chalkboard = () => {
 					taskId: 0,
 					description: "Current tasks",
 					priority: "normal",
-					tags: ["puppy"],
+					tags: ["New Feature"],
 				},
 				{
 					taskId: 1,
 					description: "Test item",
 					priority: "normal",
-					tags: ["personal", "work related"],
+					tags: ["New Feature", "Quality of Life"],
 				},
 			],
 		},
@@ -71,13 +71,13 @@ const Chalkboard = () => {
 					taskId: 0,
 					description: "Tasks in review",
 					priority: "normal",
-					tags: ["personal", "work related"],
+					tags: ["New Feature", "Quality of Life"],
 				},
 				{
 					taskId: 1,
 					description: "Test item",
 					priority: "normal",
-					tags: ["personal", "work related"],
+					tags: ["New Feature", "Quality of Life"],
 				},
 			],
 		},
@@ -89,13 +89,13 @@ const Chalkboard = () => {
 					taskId: 0,
 					description: "Finished Tasks",
 					priority: "normal",
-					tags: ["test"],
+					tags: ["Bug"],
 				},
 				{
 					taskId: 1,
 					description: "Test item",
 					priority: "normal",
-					tags: ["test"],
+					tags: ["Bug"],
 				},
 			],
 		},
@@ -114,7 +114,6 @@ const Chalkboard = () => {
 	};
 
 	const uniqueTags = generateUniqueTags();
-	console.log("unique Id", uniqueTags);
 
 	return (
 		<>
@@ -140,7 +139,6 @@ const Chalkboard = () => {
 					setColumns={setColumns}
 				/>
 			</div>
-			<AddTagsForm />
 		</>
 	);
 };
