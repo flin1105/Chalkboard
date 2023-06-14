@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import AddTagsForm from "./AddTagsForm";
 
-const ToggleTagFormButton = () => {
+const ToggleTagFormButton = ({ id, phaseTasks, editNote }) => {
 	const [showTagWindow, setShowTagWindow] = useState(false);
 
 	return (
@@ -15,7 +15,12 @@ const ToggleTagFormButton = () => {
 			</button>
 			{showTagWindow &&
 				createPortal(
-					<AddTagsForm onClose={() => setShowTagWindow(false)} />,
+					<AddTagsForm
+						onClose={() => setShowTagWindow(false)}
+						id={id}
+						phaseTasks={phaseTasks}
+						editNote={editNote}
+					/>,
 					document.body
 				)}
 		</>

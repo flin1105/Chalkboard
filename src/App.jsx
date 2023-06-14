@@ -1,14 +1,12 @@
-import { useState } from "react";
-import Chalkboard from "./Components/Chalkboard";
-import "./App.css";
+import Project from "./Components/Project";
 
 function App() {
 	return (
-		<div className="App text-center">
+		<div className="text-center bg-[#d7ffff] text-[#001919]">
 			<h1 className="text-3xl font-bold text-red-500 underline text-center">
-				Chalkboard Planner
+				MY PROJECT PLANNER
 			</h1>
-			<Chalkboard />
+			<Project />
 		</div>
 	);
 }
